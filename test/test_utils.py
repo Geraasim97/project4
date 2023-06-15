@@ -1,8 +1,8 @@
 import src.classes
 from src.utils import *
 
-FILE_URL_GENERAL = "../../../coursework3/json_file/operations.json"
-FILE_URL_TEST = "../pythonProject5/json_file/test"
+FILE_URL_GENERAL = "../json_file/operation.json"
+FILE_URL_TEST = "../json_file/test"
 
 
 def test_load_file():
@@ -15,10 +15,10 @@ def test_make_operations():
     second_list = load_file(FILE_URL_TEST)
 
     for object in make_operations(first_list):
-        assert type(object) is src.operation.Operation
+        assert type(object) is src.classes.Operation
 
     for object in make_operations(second_list):
-        assert type(object) is src.operation.Operation
+        assert type(object) is src.classes.Operation
 
     assert make_operations(second_list)[0].get_id() == 441945886
     assert make_operations(second_list)[0].get_date() == "26.08.2019"
